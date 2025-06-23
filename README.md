@@ -1,6 +1,6 @@
 # 🧠 Employee Sentiment Analysis
 
-**Author:** Ansh  
+**Author:** Ansh Upadhyay
 **Project Type:** Internal Evaluation – NLP, EDA, Predictive Modeling  
 **Tools & Libraries:** Python, Transformers, Scikit-learn, Pandas, Seaborn, Matplotlib
 
