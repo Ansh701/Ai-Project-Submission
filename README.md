@@ -83,8 +83,8 @@ This project analyzes internal employee emails to determine sentiment and engage
 
 | Metric | Value |
 |--------|--------|
-| R² Score | `0.XX` *(fill from output)* |
-| MSE | `X.XX` *(fill from output)* |
+| R² Score | `-0.04` |
+| MSE | `7.70` |
 
 The model shows a moderate correlation between communication behavior and sentiment scores, with potential for expansion using more advanced techniques.
 
