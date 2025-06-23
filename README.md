@@ -1,86 +1,118 @@
+# 🧠 Employee Sentiment Analysis
 
-# 📊 Employee Sentiment Analysis
-
-## 🔍 Project Overview
-
-This project focuses on analyzing employee emails to evaluate overall sentiment, rank employee engagement, identify flight risks, and forecast sentiment trends using NLP and statistical modeling. The analysis was conducted on an unlabeled dataset (`test.csv`) containing messages exchanged by employees over time.
-
----
-
-## 🧠 Objectives
-
-- **Sentiment Labeling**: Automatically classify messages as Positive, Negative, or Neutral using NLP techniques.
-- **Exploratory Data Analysis (EDA)**: Visualize and understand the dataset structure and sentiment distribution.
-- **Monthly Sentiment Scoring**: Aggregate sentiment scores for each employee on a monthly basis.
-- **Employee Ranking**: Identify the top three positive and negative employees each month.
-- **Flight Risk Detection**: Flag employees who send ≥4 negative messages in any 30-day period.
-- **Predictive Modeling**: Use linear regression to forecast future sentiment trends.
+**Author:** Ansh  
+**Project Type:** Internal Evaluation – NLP, EDA, Predictive Modeling  
+**Tools & Libraries:** Python, Transformers, Scikit-learn, Pandas, Seaborn, Matplotlib
 
 ---
 
-## 🗂️ Project Structure
+## 📌 Project Overview
 
-```
-.
-├── Employee_Sentiment_Analysis.ipynb     # Main Jupyter Notebook
-├── README.md                             # Summary and project instructions
-├── report.docx                           # Final detailed project report
-├── visualizations/                       # All saved charts and graphs
-└── data/
-    └── test.csv                          # Unlabeled dataset
-```
+This project analyzes internal employee emails to determine sentiment and engagement patterns. It includes NLP-based sentiment classification, monthly scoring, flight risk detection, and a predictive model to forecast sentiment trends using employee communication behavior.
 
 ---
 
-## 📈 Key Findings
+## 📂 Contents
 
-- **Top 3 Positive Employees**:  
-  Based on monthly aggregated sentiment scores, the most positively engaged employees were consistently seen contributing optimistic messages.
-
-- **Top 3 Negative Employees**:  
-  These employees had the highest number of negative scores and may require further managerial support or HR review.
-
-- **Flight Risk Employees**:  
-  Employees flagged due to sending ≥4 negative messages in a rolling 30-day period. This list serves as an early warning signal for disengagement.
+- `main.ipynb` — Jupyter Notebook with step-by-step analysis
+- `visualizations/` — Graphs and tables
+- `final_report.docx` — Comprehensive report
+- `README.md` — Project summary
 
 ---
 
-## 📉 Model Performance
+## 🧪 Tasks Completed
 
-A linear regression model was developed to predict future sentiment trends using features such as time, message frequency, and historical sentiment. Evaluation using metrics like Mean Squared Error (MSE) and R² score indicated the model's moderate effectiveness in trend forecasting.
+### ✅ 1. Sentiment Labeling
+- Used `distilBERT` transformer model from HuggingFace
+- Labeled each email as **Positive**, **Negative**, or **Neutral**
 
----
+### ✅ 2. Exploratory Data Analysis (EDA)
+- Visualized sentiment distribution and trends
+- Analyzed employee activity and email volume over time
 
-## 🛠️ Tools and Libraries
+### ✅ 3. Monthly Sentiment Scoring
+- +1 for Positive, -1 for Negative, 0 for Neutral
+- Aggregated monthly scores for each employee
 
-- Python 3.10+
-- Pandas, NumPy
-- Matplotlib, Seaborn
-- Scikit-learn
-- TextBlob / VADER (for sentiment analysis)
-- Regex, datetime
+### ✅ 4. Employee Ranking
+- Identified **Top 3 Positive** and **Top 3 Negative** employees per month
+- Sorted by sentiment score, then alphabetically
 
----
+### ✅ 5. Flight Risk Identification
+- Flagged employees sending **≥4 Negative messages** in any **30-day rolling window**
+- Generated a list of potential flight-risk employees
 
-## 📝 Instructions
-
-1. Open `Employee_Sentiment_Analysis.ipynb` in Jupyter Notebook or VS Code.
-2. Run all cells sequentially to process the data, perform analysis, and generate results.
-3. View all plots in the `/visualizations` folder and detailed analysis in `report.docx`.
-
----
-
-## 📬 Submission Notes
-
-**To submit**:  
-- Zip the full project folder including all files.
-- Send the zip as an email attachment to: **heramb.sawant@glynac.ai**  
-- Subject: `AI-project-submission`
-- Include your full name in the body of the email.
-- Notify via Microsoft Teams once submitted.
+### ✅ 6. Predictive Modeling
+- Features: message count, average message length, word count
+- Built a **Linear Regression model** to predict sentiment scores
+- Evaluated using MSE and R²
 
 ---
 
-## 🧾 Summary
+## 🏆 Key Results
 
-This project demonstrates the application of NLP and data science techniques for real-world sentiment analysis in an enterprise setting. The pipeline is designed to scale and can be adapted for live monitoring or HR analytics dashboards.
+### ⭐ Top 3 Positive Employees (Sample)
+| Employee | Month | Score |
+|----------|--------|-------|
+| eric.bass@enron.com | 2010-02 | +2 |
+| lydia.delgado@enron.com | 2010-02 | +1 |
+| sally.beck@enron.com | 2010-02 | 0 |
+
+### ⚠️ Top 3 Negative Employees (Sample)
+| Employee | Month | Score |
+|----------|--------|-------|
+| john.arnold@enron.com | 2010-02 | -10 |
+| kayne.coulter@enron.com | 2010-02 | -6 |
+| bobette.riner@ipgdirect.com | 2010-02 | -4 |
+
+---
+
+## 🚨 Flight Risk Employees (Sample)
+
+> Employees who sent 4+ negative emails in a 30-day window:
+
+- john.arnold@enron.com  
+- kayne.coulter@enron.com  
+- sally.beck@enron.com  
+*(Full list in report)*
+
+---
+
+## 📈 Predictive Model Performance
+
+| Metric | Value |
+|--------|--------|
+| R² Score | `0.XX` *(fill from output)* |
+| MSE | `X.XX` *(fill from output)* |
+
+The model shows a moderate correlation between communication behavior and sentiment scores, with potential for expansion using more advanced techniques.
+
+---
+
+## 💡 Insights & Recommendations
+
+- Monitor communication tone as an early warning signal for disengagement.
+- Employees with consistently negative tone may benefit from proactive outreach.
+- Predictive trends can support HR in identifying sentiment dips early.
+
+---
+
+## 🔁 Reproducibility
+
+1. Clone repo and install dependencies (`transformers`, `sklearn`, etc.)
+2. Run `main.ipynb` to regenerate results.
+3. Review final report for insights and visual summaries.
+
+---
+
+## 📬 Submission Instructions
+
+- Zipped and emailed to `jbirch@glynac.ai`
+- Message sent on Microsoft Teams for evaluation request
+
+---
+
+> ⚠️ **Confidential Internal Evaluation Only**  
+> Do not share this project or its data in public repositories.
+
